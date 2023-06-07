@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-""" Main 0
+""" This Main 0
 """
 import base64
 from api.v1.auth.basic_auth import BasicAuth
 from models.user import User
 
-""" Create a user test """
+""" This Create a user test """
 user_email = "bob@hbtn.io"
 user_clear_pwd = "H0lbertonSchool98!"
 

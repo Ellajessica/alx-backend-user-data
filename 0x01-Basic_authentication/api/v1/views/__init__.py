@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-""" DocDocDocDocDocDoc
+""" This DocDocDocDocDocDoc
 """
 from flask import Blueprint
 

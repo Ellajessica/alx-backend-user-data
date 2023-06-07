@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-""" Basic Flask app
+""" This Basic Flask app
 """
 from auth import Auth
 from flask import (
@@ -18,7 +18,7 @@ AUTH = Auth()
 @app.route('/', methods=['GET'], strict_slashes=False)
 def index() -> str:
     """
-    Return json response
+    This Return json response
     {"message": "Bienvenue"}
     """
     return jsonify({'message': 'Bienvenue'})
@@ -26,7 +26,7 @@ def index() -> str:
 
 @app.route('/users', methods=['POST'], strict_slashes=False)
 def users() -> str:
-    """
+    """This  
     Args:
         email (str): new user's email address
         password (str): new user's password
@@ -44,7 +44,7 @@ def users() -> str:
 
 @app.route('/sessions', methods=['POST'], strict_slashes=False)
 def login() -> str:
-    """
+    """This 
     Args:
         email (str): new user's email address
         password (str): new user's password
@@ -66,7 +66,7 @@ def login() -> str:
 @app.route('/sessions', methods=['DELETE'], strict_slashes=False)
 def logout() -> str:
     """
-    LogOut users
+    This LogOut users
     """
     session_id = request.cookies.get('session_id')
     user = AUTH.get_user_from_session_id(session_id)
@@ -82,7 +82,7 @@ def logout() -> str:
 @app.route('/profile', methods=['GET'], strict_slashes=False)
 def profile() -> str:
     """
-    User profile route
+    This User profile route
     """
     session_id = request.cookies.get('session_id')
     user = AUTH.get_user_from_session_id(session_id)
@@ -95,7 +95,7 @@ def profile() -> str:
 @app.route('/reset_password', methods=['POST'], strict_slashes=False)
 def get_reset_password_token() -> str:
     """
-    Request password reset token
+    This Request password reset token
     """
     email = request.form.get('email')
     try:
@@ -108,7 +108,7 @@ def get_reset_password_token() -> str:
 @app.route('/reset_password', methods=['PUT'], strict_slashes=False)
 def update_password() -> str:
     """
-    Update password endpoint
+    This Update password endpoint
     """
     email = request.form.get('email')
     reset_token = request.form.get('reset_token')

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-End-to-end integration test
+This End-to-end integration test
 """
 import requests
 
@@ -9,7 +9,7 @@ BASE_URL = 'http://localhost:5000'
 
 
 def register_user(email: str, password: str) -> None:
-    """Rigistration Test
+    """This Rigistration Test
     """
     response = requests.post(
         f'{BASE_URL}/users',
@@ -18,7 +18,7 @@ def register_user(email: str, password: str) -> None:
 
 
 def log_in_wrong_password(email: str, password: str) -> None:
-    """Login wrong password Test
+    """ This Login wrong password Test
     """
     response = requests.post(
         f'{BASE_URL}/sessions',
@@ -27,7 +27,7 @@ def log_in_wrong_password(email: str, password: str) -> None:
 
 
 def log_in(email: str, password: str) -> str:
-    """Login Test
+    """This Login Test
     """
     response = requests.post(
         f'{BASE_URL}/sessions',
@@ -39,14 +39,14 @@ def log_in(email: str, password: str) -> str:
 
 
 def profile_unlogged() -> None:
-    """Profile get Test
+    """This Profile get Test
     """
     response = requests.get(f'{BASE_URL}/profile')
     assert response.status_code == 403
 
 
 def profile_logged(session_id: str) -> None:
-    """Profile Logged test
+    """This Profile Logged test
     """
     headers = {'Cookie': f'session_id={session_id}'}
     response = requests.get(f'{BASE_URL}/profile', headers=headers)
@@ -56,7 +56,7 @@ def profile_logged(session_id: str) -> None:
 
 
 def log_out(session_id: str) -> None:
-    """Logout Test
+    """This Logout Test
     """
     headers = {'Cookie': f'session_id={session_id}'}
     response = requests.delete(
@@ -65,7 +65,7 @@ def log_out(session_id: str) -> None:
 
 
 def reset_password_token(email: str) -> str:
-    """reset password Token test
+    """This reset password Token test
     """
     response = requests.post(
         f'{BASE_URL}/reset_password', data={'email': email})
@@ -78,7 +78,7 @@ def reset_password_token(email: str) -> str:
 def update_password(
         email: str,
         reset_token: str, new_password: str) -> None:
-    """Update paswword Test
+    """This Update paswword Test
     """
     response = requests.put(
         f'{BASE_URL}/reset_password',

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""API authentication.
+"""This API authentication.
 """
 import re
 from flask import request
@@ -7,10 +7,10 @@ from typing import List, TypeVar
 
 
 class Auth:
-    """Returns Autentication for now.
+    """This Returns Autentication for now.
     """
     def require_auth(self, path: str, excluded_paths: List[str]) -> bool:
-        """Checks if a path requires authentication.
+        """This Checks if a path requires authentication.
         """
         if path is not None and excluded_paths is not None:
             for exclusion_path in map(lambda x: x.strip(), excluded_paths):
@@ -27,7 +27,7 @@ class Auth:
 
     def authorization_header(self, request=None) -> str:
         """
-        Returns the value of the Authorization header
+        This Returns the value of the Authorization header
         from the Flask request object.
         """
         if request is None:
@@ -41,6 +41,6 @@ class Auth:
 
     def current_user(self, request=None) -> TypeVar('User'):
         """
-        Returns None for now.
+        This Returns None for now.
         """
         return None

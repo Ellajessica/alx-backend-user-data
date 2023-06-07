@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-""" Main 2
+""" This is Main 2
 """
 from api.v1.auth.basic_auth import BasicAuth
 
